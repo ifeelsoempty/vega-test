@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance {
+  font-size: 22px;
+  font-weight: 500;
+}

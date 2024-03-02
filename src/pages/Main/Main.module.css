@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 1200px;
+  min-width: 390px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.charts {
+  display: flex; 
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+}
+
+@media screen and (max-width: 1200px) {
+  .root {
+    gap: 30px;
+  }
+
+  .charts {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    padding: 15px;
+    padding-bottom: 30px;
+    gap: 15px;
+  }
+  
+  .charts {
+    gap: 15px;
+  }
+}
