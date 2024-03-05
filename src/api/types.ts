@@ -2,7 +2,7 @@
 export type AssetName = 'USD' | 'AAPL' | 'BTC' | 'ETH' | 'GBP' | 'GOVT' | 'IAUM' | 'META' | 'TSLA' | 'VOO' 
 export type AssetClass = 'cryptocurrency' | 'stocks' | 'cash'
 
-export type Response<T> =  {
+export type Response<T> = {
   description: string,
   content: T
 }

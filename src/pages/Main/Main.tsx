@@ -21,14 +21,15 @@ const isDisabledDate = (date: Dayjs) => {
 
 export const Main: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { isLoading: isAssetsLoading, requested: assetsRequested } = useSelector(selectAssets);
-  const { isLoading: isPortfolioLoading, requested: portfolioRequested } = useSelector(selectPortfolio);
-  const { isLoading: isStartDatePortfolioLoading } = useSelector(selectStartDatePortfolio);
+  const { isLoading: isAssetsLoading, requested: assetsRequested, error: assetsError } = useSelector(selectAssets);
+  const { isLoading: isPortfolioLoading, requested: portfolioRequested, error: portfolioError } = useSelector(selectPortfolio);
+  const { isLoading: isStartDatePortfolioLoading, error: startDatePortfolioError } = useSelector(selectStartDatePortfolio);
   const historicalDate = useSelector(selectHistoricalDate);
 
   const isPortfolioUpdating = isPortfolioLoading && portfolioRequested
   const isPortfolioFirstLoading = isPortfolioLoading && !portfolioRequested;
   const isLoading = isAssetsLoading || isPortfolioFirstLoading || isStartDatePortfolioLoading
+  const error = assetsError || portfolioError || startDatePortfolioError;
 
   useEffect(() => {
     if (!assetsRequested) {
@@ -54,25 +55,29 @@ export const Main: FC = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.header}>
-        <DatePicker 
-          disabled={isLoading || isPortfolioUpdating} 
-          allowClear={false} 
-          disabledDate={isDisabledDate} 
-          value={dayjs(historicalDate)} 
-          onChange={handleDateChange} />
-          {isPortfolioUpdating && <Spin size='large' 
-        />}
-      </div>
-      <div className={styles.charts}>
-        {!isLoading && (
-          <>
-            <BalanceDonutChart />
-            <HistoricalChart />
-          </>
-        )}
-        {isLoading && <Spin size='large' />}
-      </div>
+      {!error && (
+        <>
+          <div className={styles.header}>
+            <DatePicker 
+              disabled={isLoading || isPortfolioUpdating} 
+              allowClear={false} 
+              disabledDate={isDisabledDate} 
+              value={dayjs(historicalDate)} 
+              onChange={handleDateChange} />
+              {isPortfolioUpdating && <Spin size='large' 
+            />}
+          </div>
+          <div className={styles.charts}>
+            {!isLoading && (
+              <>
+                <BalanceDonutChart />
+                <HistoricalChart />
+              </>
+            )}
+            {isLoading && <Spin size='large' />}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -24,30 +24,30 @@ const initialState: State = {
   portfolio: {
     isLoading: false,
     requested: false,
-    data: null
+    data: null,
   },
   startDatePortfolio: {
     isLoading: false,
     requested: false,
-    data: null
+    data: null,
   },
   assets: {
     isLoading: false,
     requested: false,
-    data: []
+    data: [],
   },
 };
 
 export const getAssets = createAsyncThunk<Asset[], undefined, { rejectValue: string }>(
   "portfolio/getAssets", 
   async (_arg, { rejectWithValue }) => {
-    try {
-      const assets = await fetchAssets();
-      
-      return assets
-    } catch (e) {
-      return rejectWithValue(e as string);
+    const assets = await fetchAssets();
+    
+    if(!assets) {
+      return rejectWithValue(`Redux: error has occured when trying to fetch assets`);
     }
+
+    return assets
   }
 );
 
@@ -59,8 +59,8 @@ export const getPortfolio = createAsyncThunk<Portfolio, undefined, { rejectValue
       const portfolio = await fetchCollectedPortfolio(assets.data, historicalDate);
 
       return portfolio
-    } catch (e) {
-      return rejectWithValue(e as string);
+    } catch {
+      return rejectWithValue('Redux: error has occured when trying to fetch collected portfolio');
     }
   }
 );
@@ -73,8 +73,8 @@ export const getStartDatePortfolio = createAsyncThunk<Portfolio, undefined, { re
       const portfolio = await fetchCollectedPortfolio(assets.data, FIRST_AVAILABLE_DATE);
 
       return portfolio
-    } catch (e) {
-      return rejectWithValue(e as string);
+    } catch {
+      return rejectWithValue('Redux: error has occured when trying to fetch collected start date portfolio');
     }
   }
 );
@@ -89,14 +89,18 @@ export const portfolioSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getPortfolio.pending, (state) => {
+      state.assets.error = '';
       state.portfolio.isLoading = true;
     });
     builder.addCase(getStartDatePortfolio.pending, (state) => {
+      state.assets.error = '';
       state.startDatePortfolio.isLoading = true;
     });
     builder.addCase(getAssets.pending, (state) => {
+      state.assets.error = '';
       state.assets.isLoading = true;
     });
+
     builder.addCase(getPortfolio.fulfilled, (state, action) => {
       state.portfolio.data = action.payload;
       state.portfolio.isLoading = false;
@@ -111,6 +115,18 @@ export const portfolioSlice = createSlice({
       state.assets.data = action.payload;
       state.assets.isLoading = false;
       state.assets.requested = true;
+    });
+    builder.addCase(getPortfolio.rejected, (state, action) => {
+      state.assets.isLoading = false;
+      state.assets.error = action.error.message;
+    });
+    builder.addCase(getStartDatePortfolio.rejected, (state, action) => {
+      state.assets.isLoading = false;
+      state.assets.error = action.error.message;
+    });
+    builder.addCase(getAssets.rejected, (state, action) => {
+      state.assets.isLoading = false;
+      state.assets.error = action.error.message;
     });
   },
 });

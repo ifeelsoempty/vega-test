@@ -5,6 +5,8 @@ import { Portfolio } from "./types";
 export const fetchCollectedPortfolio = async (assets: Asset[], asOf: string): Promise<Portfolio> => {
   const portfolio = await fetchPortfolio({ params: { asOf }});
 
+  if(!portfolio) throw new Error(`Redux: error has occured when trying to fetch prices`)
+
   if(!assets.length) {
     throw new Error('Redux: should request assets before requesting portfolio')
   }
@@ -23,6 +25,8 @@ export const fetchCollectedPortfolio = async (assets: Asset[], asOf: string): Pr
     asOf,
     assets: userAssets.join(',')
   }})
+
+  if(!prices) throw new Error(`Redux: error has occured when trying to fetch prices`)
 
   const positions = portfolio.positions.map((position) => {
     const positionAsset = assets.find((asset) => asset.id === position.asset);
