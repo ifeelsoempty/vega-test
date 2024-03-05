@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/vega-test/static/css/main.1633c757.css",
-    "main.js": "/vega-test/static/js/main.ade43a17.js",
+    "main.js": "/vega-test/static/js/main.7d10e603.js",
     "static/js/885.b8e2e3bb.chunk.js": "/vega-test/static/js/885.b8e2e3bb.chunk.js",
     "static/js/18.183ab2ae.chunk.js": "/vega-test/static/js/18.183ab2ae.chunk.js",
     "index.html": "/vega-test/index.html",
     "main.1633c757.css.map": "/vega-test/static/css/main.1633c757.css.map",
-    "main.ade43a17.js.map": "/vega-test/static/js/main.ade43a17.js.map",
+    "main.7d10e603.js.map": "/vega-test/static/js/main.7d10e603.js.map",
     "885.b8e2e3bb.chunk.js.map": "/vega-test/static/js/885.b8e2e3bb.chunk.js.map",
     "18.183ab2ae.chunk.js.map": "/vega-test/static/js/18.183ab2ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1633c757.css",
-    "static/js/main.ade43a17.js"
+    "static/js/main.7d10e603.js"
   ]
 }
