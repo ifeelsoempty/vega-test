@@ -1,17 +1,17 @@
 
 import { FC, useEffect } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+import { DatePicker, Spin } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { BalanceDonutChart } from 'widgets/BalanceDonutChart';
 import { HistoricalChart } from 'widgets/HistoricalChart';
-
-import styles from './Main.module.css'
 import { AppDispatch } from 'store';
-import { useDispatch, useSelector } from 'react-redux';
 import { getAssets, getPortfolio, getStartDatePortfolio, setHistoricalDate } from 'store/slices/portfolio';
-import { DatePicker, Spin } from 'antd';
 import { selectAssets, selectHistoricalDate, selectPortfolio, selectStartDatePortfolio } from 'store/slices/portfolio/selectors';
 import { FIRST_AVAILABLE_DATE, LAST_AVAILABLE_DATE } from 'api/mocks/data';
-import dayjs, { Dayjs } from 'dayjs';
+
+import styles from './Main.module.css'
 
 const DATE_FORMAT = 'YYYY-MM-DD'
 

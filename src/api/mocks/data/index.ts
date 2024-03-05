@@ -1,3 +1,5 @@
+import { Asset, AssetName, Portfolio, Position } from 'api/types'
+
 import USD from './historicalPrices/USD.json'
 import VOO from './historicalPrices/VOO.json'
 import AAPL from './historicalPrices/AAPL.json'
@@ -8,7 +10,6 @@ import GOVT from './historicalPrices/GOVT.json'
 import IAUM from './historicalPrices/IAUM.json'
 import META from './historicalPrices/META.json'
 import TSLA from './historicalPrices/TSLA.json'
-import { Asset, AssetName, Portfolio, Position } from 'api/types'
 
 export const FIRST_AVAILABLE_DATE = '2023-11-27'
 export const LAST_AVAILABLE_DATE = '2024-03-03'

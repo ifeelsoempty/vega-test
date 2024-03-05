@@ -1,7 +1,7 @@
 import { ServerEntity } from "store/types";
+import { AssetName } from "api/types";
 import { selectAssetPriceDifference, selectTotalBalanceDifference } from "./selectors";
 import { Portfolio, PriceDifference } from "./types";
-import { AssetName } from "api/types";
 
 const mockPortfolio: ServerEntity<Portfolio> = {
   requested: true,

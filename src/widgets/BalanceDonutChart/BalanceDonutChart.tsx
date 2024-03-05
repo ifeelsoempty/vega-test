@@ -1,12 +1,12 @@
 import { FC, useMemo, useState } from "react"
 import { Switch } from "antd";
 import { Doughnut } from 'react-chartjs-2';
+import { useSelector } from "react-redux";
 
+import { selectPortfolio, selectTotalBalance } from "store/slices/portfolio/selectors";
 import { AssetClass } from "api/types";
 
 import styles from './BalanceDonutChart.module.css'
-import { useSelector } from "react-redux";
-import { selectPortfolio, selectTotalBalance } from "store/slices/portfolio/selectors";
 
 const assetClassTitles: Record<AssetClass, string> = {
   cryptocurrency: 'Cryptocurrency',

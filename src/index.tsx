@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
 import { App } from './App';
 import packageJson from '../package.json'
 

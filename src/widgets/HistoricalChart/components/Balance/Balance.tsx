@@ -1,14 +1,13 @@
 import { FC } from "react"
 import { useSelector } from "react-redux"
+import classNames from "classnames"
 
 import { Portfolio } from "store/slices/portfolio/types"
-
 import { selectTotalBalance, selectTotalBalanceDifference } from "store/slices/portfolio/selectors"
 import { formatPrice } from "utils/formatePrice/formatPrice"
-
-import styles from './Balance.module.css'
-import classNames from "classnames"
 import { PerformanceTag } from "components/PerformanceTag"
+
+import styles from "./Balance.module.css"
 
 type BalanceProps = {
   portfolio: Portfolio | null,

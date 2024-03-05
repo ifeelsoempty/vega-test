@@ -1,8 +1,9 @@
+import { createSelector } from "@reduxjs/toolkit";
+
 import { ServerEntity } from "store/types";
-import { RootState } from "../..";
 import { Portfolio, PriceDifference } from "./types";
 import { AssetName } from "api/types";
-import { createSelector } from "@reduxjs/toolkit";
+import { RootState } from "../..";
 
 const getPortfolioTotalBalance = (portfolio: ServerEntity<Portfolio | null>) => {
   return portfolio.data?.positions.reduce<number>((acc, position) => {
