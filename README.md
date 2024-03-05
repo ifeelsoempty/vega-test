@@ -4,6 +4,18 @@ This project is deployed in github pages https://ifeelsoempty.github.io/vega-tes
 
 It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run this commands in order to launch project locally
+
+1. `npm init`
+
+3. `npm start`
+
+## Run this commands in order to deploy project in github pages
+
+1. `npm init`
+
+3. `npm deploy`
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -30,6 +42,15 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run predeploy`
+
+Builds the application to prepare before running `npm run deploy`, 
+gh-pages command tool runs this command
+
+### `npm run deploy`
+
+Deploys application in github pages https://ifeelsoempty.github.io/vega-test/
 
 ### `npm run eject`
 

@@ -6,7 +6,7 @@ import styles from './HistoricalChart.module.css'
 import { Table, TableProps, Tag } from "antd";
 import { useSelector } from "react-redux";
 import { selectAssetPriceDifference, selectPortfolio } from "store/slices/portfolio/selectors";
-import { formatPrice } from "utils/formatPrice";
+import { formatPrice } from "utils/formatePrice/formatPrice";
 import { PriceDifference } from "store/slices/portfolio/types";
 import { PerformanceTag } from "components/PerformanceTag";
 

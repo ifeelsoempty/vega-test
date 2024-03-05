@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { Portfolio } from "store/slices/portfolio/types"
 
 import { selectTotalBalance, selectTotalBalanceDifference } from "store/slices/portfolio/selectors"
-import { formatPrice } from "utils/formatPrice"
+import { formatPrice } from "utils/formatePrice/formatPrice"
 
 import styles from './Balance.module.css'
 import classNames from "classnames"

@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { formatPrice } from "utils/formatPrice"
+import { formatPrice } from "utils/formatePrice/formatPrice"
 
 import { Tag } from "antd"
 

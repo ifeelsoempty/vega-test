@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PerformanceTag renders correctly with negative number 1`] = `
+<div>
+  <span
+    class="ant-tag ant-tag-error css-dev-only-do-not-override-1drr2mu"
+  >
+    -$50.00
+     · 
+    5.00
+    %
+  </span>
+</div>
+`;
+
+exports[`PerformanceTag renders correctly with positive number 1`] = `
+<div>
+  <span
+    class="ant-tag ant-tag-success css-dev-only-do-not-override-1drr2mu"
+  >
+    +$100.00
+     · 
+    10.00
+    %
+  </span>
+</div>
+`;
+
+exports[`PerformanceTag renders correctly with zero number 1`] = `
+<div>
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-1drr2mu"
+  >
+    $0.00
+     · 
+    0.00
+    %
+  </span>
+</div>
+`;
