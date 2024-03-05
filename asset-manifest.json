@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/vega-test/static/css/main.73205ba4.css",
-    "main.js": "/vega-test/static/js/main.8cb84a28.js",
-    "static/js/885.f241d816.chunk.js": "/vega-test/static/js/885.f241d816.chunk.js",
-    "static/js/18.183ab2ae.chunk.js": "/vega-test/static/js/18.183ab2ae.chunk.js",
-    "index.html": "/vega-test/index.html",
-    "main.73205ba4.css.map": "/vega-test/static/css/main.73205ba4.css.map",
-    "main.8cb84a28.js.map": "/vega-test/static/js/main.8cb84a28.js.map",
-    "885.f241d816.chunk.js.map": "/vega-test/static/js/885.f241d816.chunk.js.map",
-    "18.183ab2ae.chunk.js.map": "/vega-test/static/js/18.183ab2ae.chunk.js.map"
+    "main.css": "./static/css/main.73205ba4.css",
+    "main.js": "./static/js/main.ea9c6437.js",
+    "static/js/885.f241d816.chunk.js": "./static/js/885.f241d816.chunk.js",
+    "static/js/18.72654dce.chunk.js": "./static/js/18.72654dce.chunk.js",
+    "index.html": "./index.html",
+    "main.73205ba4.css.map": "./static/css/main.73205ba4.css.map",
+    "main.ea9c6437.js.map": "./static/js/main.ea9c6437.js.map",
+    "885.f241d816.chunk.js.map": "./static/js/885.f241d816.chunk.js.map",
+    "18.72654dce.chunk.js.map": "./static/js/18.72654dce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73205ba4.css",
-    "static/js/main.8cb84a28.js"
+    "static/js/main.ea9c6437.js"
   ]
 }
