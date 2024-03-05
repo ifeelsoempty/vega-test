@@ -1,8 +1,8 @@
 # Vega test task
 
-The project is deployed in github pages https://ifeelsoempty.github.io/vega-test/ 
+This project is deployed in github pages https://ifeelsoempty.github.io/vega-test/ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
