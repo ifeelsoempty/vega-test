@@ -27,15 +27,16 @@ export const BalanceDonutChart: FC = () => {
     return Array.from(new Set(labels))
   }, [portfolio, isByClass])
 
-  const data = useMemo(() => {
+  const data = useMemo<number[] | undefined>(() => {
     if(isByClass) {
-      const priceByClass = new Map(); 
+      const priceByClass = new Map<AssetClass, number>(); 
 
       portfolio?.positions.forEach((position) => {
         const positionClass = position.asset.class;
+        const currentClassPrice = priceByClass.get(positionClass);
 
-        if(priceByClass.has(positionClass)) {
-          priceByClass.set(positionClass, position.price + priceByClass.get(positionClass))
+        if(currentClassPrice) {
+          priceByClass.set(positionClass, position.price + currentClassPrice)
         } else {
           priceByClass.set(positionClass, position.price)
         }

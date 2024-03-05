@@ -1,8 +1,7 @@
 import { FC } from "react"
+import { Tag } from "antd"
 
 import { formatPrice } from "utils/formatePrice/formatPrice"
-
-import { Tag } from "antd"
 
 type PerformanceTagProps = {
   percent: number,
