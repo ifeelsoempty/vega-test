@@ -53,7 +53,7 @@ export const BalanceDonutChart: FC = () => {
       <div className={styles.header}>
         <h2 className={styles.title}>Assets</h2>
         <div className={styles.sortClassSwitch}>
-          <span>Sort by asset class</span>
+          <span>Group by asset class</span>
           <Switch value={isByClass} onChange={setIsByClass} />
         </div>
       </div>

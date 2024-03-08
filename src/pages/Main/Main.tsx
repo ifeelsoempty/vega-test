@@ -64,8 +64,7 @@ export const Main: FC = () => {
               disabledDate={isDisabledDate} 
               value={dayjs(historicalDate)} 
               onChange={handleDateChange} />
-              {isPortfolioUpdating && <Spin size='large' 
-            />}
+              {isPortfolioUpdating && <Spin size='large' />}
           </div>
           <div className={styles.charts}>
             {!isLoading && (
